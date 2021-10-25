@@ -29,15 +29,15 @@
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.saldo}"></td>
 
-            <td> <a  th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-success" >Edit</a>
-                <a th:href="@{/customers/delete/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
+            <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-success" >Edit</a>
+                <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
             </td>
 
         </tr>
         </tbody>
     </table>
 
-    <a href="/customers/new">
+    <a href="/new">
         <button style="margin-top :15px" type="button" class="btn btn-success btn-lg">Add New User</button>
 
     </a>
