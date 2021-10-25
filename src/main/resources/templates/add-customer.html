@@ -11,23 +11,28 @@
     <form action="#" th:action="@{/save}" th:object="${customer}" method="post">
 
         <table border="3" class =" table table-hover table-responsive-md">
-            <tr>  <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
-                         class="validation-message"></label>
+            <tr>
                 <td>User Name:</td>
 
                 <td><input type="text" th:field="*{name}"  placeholder="Name"
                            />
+                    <label style="color:red;"  th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                           class="validation-message"></label>
                 </td>
             </tr>
             <tr>
                 <td>User Surname:</td>
-                <td><input type="text" th:field="*{surname}" placeholder="Surname" /></td>
+                <td><input type="text" th:field="*{surname}" placeholder="Surname" />
+                    <label style="color:red;" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"
+                           class="validation-message"></label>
+
+                </td>
             </tr>
 
             <tr>
                 <td>User Email:</td>
                 <td><input type="text" th:field="*{email}" placeholder="Email" />
-                    <label
+                    <label style="color:red;"
                             th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                             class="validation-message"></label>
                 </td>
@@ -35,8 +40,12 @@
 
 
             <tr>
-                <td>Saldo:</td>
-                <td><input type="text" th:field="*{saldo}" placeholder="Saldo" /></td>
+                <td> Phone Number:</td>
+                <td><input type="text" th:field="*{phone}" placeholder="tel-number" />
+                    <label style="color:red;"   th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+                           class="validation-message"></label>
+
+                </td>
             </tr>
 
         </table>
