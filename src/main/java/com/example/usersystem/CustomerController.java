@@ -5,10 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/customers")
+
 public class CustomerController {
 
     @Autowired
@@ -16,7 +17,7 @@ public class CustomerController {
 
     @RequestMapping( method = RequestMethod.GET)
     private String getAllCustomers(Model model) {
-        List<Customer> list = customerService.loadAllCustomers();
+        List<Customer> list = customerService.getCustomers();
         model.addAttribute("allCustomers", list);
         return "index";
     }
@@ -29,9 +30,9 @@ public class CustomerController {
     }
 
     @RequestMapping(path = "/save", method = RequestMethod.POST)
-    public String saveNewCustomer(@ModelAttribute("customer") Customer customer) {
+    public String saveNewCustomer( @Valid @ModelAttribute("customer")  Customer customer ) {
         customerService.saveCustomer(customer);
-        return "redirect:/customers";
+        return "redirect:/";
     }
 
     @GetMapping("/edit/{id}")
@@ -45,13 +46,13 @@ public class CustomerController {
     private String updateCustomer(@PathVariable("id") int id, @ModelAttribute Customer customer) {
         customer.setId(id);
         customerService.updateCustomer(customer);
-        return "redirect:/customers";
+        return "redirect:/";
     }
 
     @GetMapping("/delete/{id}")
     private String deleteCustomer(@PathVariable("id") int id) {
         customerService.deleteCustomer(id);
-        return "redirect:/customers";
+        return "redirect:/";
     }
 
 

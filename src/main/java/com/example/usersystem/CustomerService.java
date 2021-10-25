@@ -10,23 +10,22 @@ import java.util.List;
 @Service
 public class CustomerService {
 
-    @Autowired
+
     CustomerRepository customerRepository;
+    @Autowired
+    CustomerService(CustomerRepository customerRepository){
+
+        this.customerRepository=customerRepository;
+
+    }
 
 
 
-    @GetMapping
     public List<Customer> getCustomers(){
+
         return customerRepository.findAll();
     }
 
-
-
-
-    public List<Customer> loadAllCustomers() {
-
-        return (List<Customer>) customerRepository.findAll();
-    }
 
     public Customer loadCustomerById(int id) {
 

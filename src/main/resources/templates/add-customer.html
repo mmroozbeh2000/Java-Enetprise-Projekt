@@ -8,27 +8,35 @@
 </head>
 <body>
 <div class="container my-2">
-    <form action="#" th:action="@{/customers/save}" th:object="${customer}" method="post">
+    <form action="#" th:action="@{/save}" th:object="${customer}" method="post">
 
-        <table border="1" class =" table table-hover table-responsive-md">
-            <tr>
+        <table border="3" class =" table table-hover table-responsive-md">
+            <tr>  <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                         class="validation-message"></label>
                 <td>User Name:</td>
-                <td><input type="text" th:field="*{name}" /></td>
+
+                <td><input type="text" th:field="*{name}"  placeholder="Name"
+                           />
+                </td>
             </tr>
             <tr>
                 <td>User Surname:</td>
-                <td><input type="text" th:field="*{surname}" /></td>
+                <td><input type="text" th:field="*{surname}" placeholder="Surname" /></td>
             </tr>
 
             <tr>
                 <td>User Email:</td>
-                <td><input type="text" th:field="*{email}" /></td>
+                <td><input type="text" th:field="*{email}" placeholder="Email" />
+                    <label
+                            th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                            class="validation-message"></label>
+                </td>
             </tr>
 
 
             <tr>
                 <td>Saldo:</td>
-                <td><input type="text" th:field="*{saldo}" /></td>
+                <td><input type="text" th:field="*{saldo}" placeholder="Saldo" /></td>
             </tr>
 
         </table>
