@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Account Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+    <form action="#" th:action="@{/customers/save}" th:object="${customer}" method="post">
+
+        <table border="1" class =" table table-hover table-responsive-md">
+            <tr>
+                <td>User Name:</td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td>User Surname:</td>
+                <td><input type="text" th:field="*{surname}" /></td>
+            </tr>
+
+            <tr>
+                <td>User Email:</td>
+                <td><input type="text" th:field="*{email}" /></td>
+            </tr>
+
+
+            <tr>
+                <td>Saldo:</td>
+                <td><input type="text" th:field="*{saldo}" /></td>
+            </tr>
+
+        </table>
+
+        <button type="submit" class="btn btn-outline-success btn-lg">Save</button>
+
+    </form>
+</div>
+</body>
+</html>
