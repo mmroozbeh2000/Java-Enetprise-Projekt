@@ -17,7 +17,7 @@
             <th>User Name</th>
             <th>User Surname</th>
             <th>User Email</th>
-            <th>Saldo</th>
+            <th>Phone number</th>
             <th >Action</th>
 
         </tr>
@@ -27,7 +27,7 @@
             <td th:text="${customer.name}"></td>
             <td th:text="${customer.surname}"></td>
             <td th:text="${customer.email}"></td>
-            <td th:text="${customer.saldo}"></td>
+            <td th:text="${customer.phone}"></td>
 
             <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-success" >Edit</a>
                 <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>

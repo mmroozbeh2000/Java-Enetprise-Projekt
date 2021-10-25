@@ -3,6 +3,7 @@ package com.example.usersystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -31,7 +32,11 @@ public class CustomerController implements WebMvcConfigurer {
     }
 
     @RequestMapping(path = "/save", method = RequestMethod.POST)
-    public String saveNewCustomer( @Valid @ModelAttribute("customer")  Customer customer ) {
+    public String saveNewCustomer( @Valid @ModelAttribute("customer")  Customer customer, BindingResult bindingResult ) {
+
+        if (bindingResult.hasErrors()) {
+            return "/add-customer";
+        }
         customerService.saveCustomer(customer);
         return "redirect:/";
     }

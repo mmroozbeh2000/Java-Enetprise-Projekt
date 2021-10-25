@@ -23,21 +23,21 @@ public class Customer {
     private int id;
 
     @Column
-    @NotEmpty(message = "*Please provide your name")
-    @NotNull
+    @NotEmpty(message = "*Please provide your name!")
+
     private String name;
 
     @Column
-    @NotNull
+    @NotEmpty(message = "*Please provide your surname!")
     private String surname;
 
     @Column
-    @NotNull
-    @Email
-    @NotEmpty(message = "*Please provide an email")
+   @Email(message = "*Please provide an email!")
+    @NotEmpty(message = "*Please provide an email!")
     private String email;
 
     @Column
-    private int saldo;
+    @NotNull(message = "*please enter your number!")
+    private int phone;
 
 }
