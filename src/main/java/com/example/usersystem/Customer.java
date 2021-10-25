@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 @Data
 @Builder
 @Getter
@@ -22,15 +24,16 @@ public class Customer {
 
     @Column
     @NotEmpty(message = "*Please provide your name")
-
+    @NotNull
     private String name;
 
     @Column
+    @NotNull
     private String surname;
 
     @Column
-   @Email
-
+    @NotNull
+    @Email
     @NotEmpty(message = "*Please provide an email")
     private String email;
 
