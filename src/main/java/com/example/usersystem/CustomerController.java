@@ -16,7 +16,19 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @RequestMapping( method = RequestMethod.GET)
+
+    @RequestMapping(method = RequestMethod.GET)
+
+
+        private String firstPage(){
+
+
+        return "welcome";
+    }
+
+
+
+    @RequestMapping( value = "/user",method = RequestMethod.GET)
     private String getAllCustomers(Model model) {
         List<Customer> list = customerService.getCustomers();
         model.addAttribute("allCustomers", list);
@@ -37,7 +49,7 @@ public class CustomerController {
             return "/add-customer";
         }
         customerService.saveCustomer(customer);
-        return "redirect:/";
+        return "redirect:/user";
     }
 
     @GetMapping("/edit/{id}")
@@ -51,13 +63,13 @@ public class CustomerController {
     private String updateCustomer(@PathVariable("id") int id, @ModelAttribute Customer customer) {
         customer.setId(id);
         customerService.updateCustomer(customer);
-        return "redirect:/";
+        return "redirect:/user";
     }
 
     @GetMapping("/delete/{id}")
     private String deleteCustomer(@PathVariable("id") int id) {
         customerService.deleteCustomer(id);
-        return "redirect:/";
+        return "redirect:/user";
     }
 
 
