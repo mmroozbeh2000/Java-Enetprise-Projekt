@@ -9,15 +9,15 @@
 </head>
 
 <body>
-<div  class="container my-2">
+<div  class="container my-2 text-center">
 
     <table class =" table table-hover  table-responsive-md">
         <thead class="thead-dark">
         <tr th:bgcolor="green">
-            <th>User Name</th>
-            <th>User Surname</th>
-            <th>User Email</th>
-            <th>Phone number</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Number</th>
             <th >Action</th>
 
         </tr>
@@ -29,8 +29,8 @@
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.phone}"></td>
 
-            <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-success" >Edit</a>
-                <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
+            <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-outline-success font-weight-bold ">Edit</a>
+                <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-outline-danger font-weight-bold">Delete</a>
             </td>
 
         </tr>
@@ -38,7 +38,7 @@
     </table>
 
     <a href="/new">
-        <button style="margin-top :15px" type="button" class="btn btn-success btn-lg">Add New User</button>
+        <button style="margin-top :15px" type="button" class="btn btn-outline-dark btn-lg font-weight-bold ">Add New User</button>
 
     </a>
 

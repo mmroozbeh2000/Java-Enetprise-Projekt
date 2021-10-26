@@ -28,8 +28,8 @@
             </tr>
             <tr>
                 <td>User Email:</td>
-                <td><input style="color:red;" type="text" th:field="*{email}" />
-                    <label
+                <td><input type="text" th:field="*{email}" />
+                    <label  style="color:red;"
                             th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                             class="validation-message"></label>
 
@@ -38,9 +38,9 @@
 
             <tr>
                 <td>Phone number:</td>
-                <td><input style="color:red;" type="text" th:field="*{phone}" />
+                <td><input  type="text" th:field="*{phone}" />
 
-                    <label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+                    <label style="color:red;"  th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
                            class="validation-message"></label>
 
                 </td>
