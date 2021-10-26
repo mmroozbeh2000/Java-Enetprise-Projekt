@@ -14,22 +14,25 @@ import java.util.List;
 
 public class CustomerController implements WebMvcConfigurer {
 
-    @Autowired
     CustomerService customerService;
 
+    @Autowired
+    CustomerController(CustomerService customerService) {
+
+        this.customerService = customerService;
+
+    }
 
     @RequestMapping(method = RequestMethod.GET)
 
 
-        private String firstPage(){
+    private String firstPage() {
 
 
         return "welcome";
     }
 
-
-
-    @RequestMapping( value = "/user",method = RequestMethod.GET)
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
     private String getAllCustomers(Model model) {
         List<Customer> list = customerService.getCustomers();
         model.addAttribute("allCustomers", list);
@@ -44,7 +47,7 @@ public class CustomerController implements WebMvcConfigurer {
     }
 
     @RequestMapping(path = "/save", method = RequestMethod.POST)
-    public String saveNewCustomer( @Valid @ModelAttribute("customer")  Customer customer, BindingResult bindingResult ) {
+    public String saveNewCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "/add-customer";
@@ -72,8 +75,6 @@ public class CustomerController implements WebMvcConfigurer {
         customerService.deleteCustomer(id);
         return "redirect:/user";
     }
-
-
 
 
 }
