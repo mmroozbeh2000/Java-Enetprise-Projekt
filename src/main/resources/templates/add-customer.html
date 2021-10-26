@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Account Manager</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <div class="container my-2 text-center">
@@ -42,7 +43,7 @@
             <tr>
                 <td> Phone Number:</td>
                 <td><input type="text" th:field="*{phone}" placeholder="tel-number" />
-                    <label style="color:red;"   th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+                    <label style="color:red;"  th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
                            class="validation-message"></label>
 
                 </td>
