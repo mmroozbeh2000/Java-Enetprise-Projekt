@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<div class="container my-2">
+<div class="container my-2 text-center">
     <form action="#" th:action="@{/save}" th:object="${customer}" method="post">
 
         <table border="3" class =" table table-hover table-responsive-md">
@@ -50,7 +50,7 @@
 
         </table>
 
-        <button type="submit" class="btn btn-outline-success btn-lg">Save</button>
+        <button type="submit" class="btn btn-outline-success btn-lg font-weight-bold">Save</button>
 
     </form>
 </div>
