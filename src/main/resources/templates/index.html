@@ -30,8 +30,10 @@
             <td th:text="${customer.surname}"></td>
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.phone}"></td>
-            <td th:text="${customer.createTimeDate}"></td>
-            <td th:text="${customer.updateTimeDate}"></td>
+            th:text="  ${
+            #temporals.format(post.getUpdatedAt(),'yyyy-mm-dd hh-mm')}"
+            <td th:text="${#temporals.format(customer.createTimeDate,'yyyy-MM-dd HH:mm') }"></td>
+            <td th:text="${#temporals.format(customer.updateTimeDate,'yyyy-MM-dd HH:mm')  }"></td>
 
             <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-outline-success font-weight-bold " >Edit</a>
                 <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-outline-danger font-weight-bold">Delete</a>
