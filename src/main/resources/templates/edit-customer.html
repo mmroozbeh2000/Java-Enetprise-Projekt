@@ -28,9 +28,9 @@
             </tr>
             <tr>
                 <td>User Email:</td>
-                <td><input style="color:red;" type="text" th:field="*{email}" />
+                <td><input  type="text" th:field="*{email}" />
                     <label
-                            th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                            style="color:red;"   th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                             class="validation-message"></label>
 
                 </td>
@@ -38,16 +38,16 @@
 
             <tr>
                 <td>Phone number:</td>
-                <td><input style="color:red;" type="text" th:field="*{phone}" />
+                <td><input  type="text" th:field="*{phone}" />
 
-                    <label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+                    <label style="color:red;" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
                            class="validation-message"></label>
 
                 </td>
             </tr>
 
         </table>
-        <button type="button" onclick="history.go(-1)" class="btn btn-outline-success btn-lg font-weight-bold">Cancel</button>
+        <button type="button" onclick="history.go(-1)" class="btn btn-outline-danger btn-lg font-weight-bold">Cancel</button>
         <button type="submit" class="btn btn-outline-success btn-lg font-weight-bold">Save</button>
     </form>
 </div>
