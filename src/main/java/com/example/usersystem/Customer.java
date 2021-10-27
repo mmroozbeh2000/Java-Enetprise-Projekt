@@ -1,11 +1,14 @@
 package com.example.usersystem;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -39,5 +42,16 @@ public class Customer {
     @Column
     @NotNull(message = "*please enter your number!")
     private int phone;
+
+    @CreationTimestamp
+    @Column(name="created", updatable = false)
+    private LocalDateTime createTimeDate;
+
+    @UpdateTimestamp
+    @Column(name="lastUpdated")
+    private  LocalDateTime updateTimeDate;
+
+
+
 
 }
