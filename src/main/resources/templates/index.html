@@ -18,6 +18,8 @@
             <th>Surname</th>
             <th>Email</th>
             <th>Phone number</th>
+            <th>Created</th>
+            <th>Last Updated</th>
             <th >Action</th>
 
         </tr>
@@ -28,6 +30,8 @@
             <td th:text="${customer.surname}"></td>
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.phone}"></td>
+            <td th:text="${customer.createTimeDate}"></td>
+            <td th:text="${customer.updateTimeDate}"></td>
 
             <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-outline-success font-weight-bold " >Edit</a>
                 <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-outline-danger font-weight-bold">Delete</a>
