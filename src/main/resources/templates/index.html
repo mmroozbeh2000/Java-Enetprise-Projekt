@@ -34,8 +34,8 @@
             <td th:text="${#temporals.format(customer.createTimeDate,'yyyy-MM-dd HH:mm') }"></td>
             <td th:text="${#temporals.format(customer.updateTimeDate,'yyyy-MM-dd HH:mm')  }"></td>
 
-            <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn btn-outline-success font-weight-bold " >Edit</a>
-                <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn btn-outline-danger font-weight-bold">Delete</a>
+            <td> <a  th:href="@{/edit/{id}(id=${customer.id})}" class="btn-sm btn-outline-success font-weight-bold " >Edit</a>
+                <a th:href="@{/delete/{id}(id=${customer.id})}" class="btn-sm btn-outline-danger font-weight-bold">Delete</a>
             </td>
 
         </tr>
