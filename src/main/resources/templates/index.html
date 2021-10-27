@@ -14,9 +14,9 @@
     <table class =" table table-hover  table-responsive-md">
         <thead class="thead-dark">
         <tr th:bgcolor="green">
-            <th>User Name</th>
-            <th>User Surname</th>
-            <th>User Email</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
             <th>Phone number</th>
             <th >Action</th>
 
@@ -38,9 +38,14 @@
     </table>
 
     <a href="/new">
-        <button style="margin-top :15px" type="button" class="btn btn-outline-dark btn-lg font-weight-bold ">Add New User</button>
+        <button style="margin-top :15px" type="button" class="btn btn-outline-primary btn-lg font-weight-bold ">Add New User</button>
 
     </a>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" class="btn btn-outline-danger btn-lg font-weight-bold "  style="margin-top :15px"  />
+
+    </form>
 
 
 </div>
