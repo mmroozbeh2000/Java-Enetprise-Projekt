@@ -30,8 +30,7 @@
             <td th:text="${customer.surname}"></td>
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.phone}"></td>
-            th:text="  ${
-            #temporals.format(post.getUpdatedAt(),'yyyy-mm-dd hh-mm')}"
+
             <td th:text="${#temporals.format(customer.createTimeDate,'yyyy-MM-dd HH:mm') }"></td>
             <td th:text="${#temporals.format(customer.updateTimeDate,'yyyy-MM-dd HH:mm')  }"></td>
 
